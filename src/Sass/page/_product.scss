@@ -1,0 +1,198 @@
+.product {
+    .banner-product {
+        background: url(../assets/img/slide-3.jpg) no-repeat center center/cover;
+        height: 40vh;
+        margin-bottom: 30px;
+    }
+    .title_page {
+        letter-spacing: normal;
+        margin: 30px 0;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    aside {
+        .category {
+            h3 {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 1.2rem;
+                font-weight: normal;
+                text-transform: uppercase;
+                color: rgb(104, 104, 104);
+            }
+            li {
+                a {
+                    overflow: hidden;
+                    white-space: pre-wrap;
+                    text-align: left;
+                    position: relative;
+                    padding: 0;
+                    color: rgb(104, 104, 104);
+                    font-size: 0.9rem;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        color: $yellow;
+                    }
+                    &::after {
+                        content: "•";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        font-size: 1.7rem;
+                        color: #e3ab39;
+                        opacity: 0;
+                        overflow: hidden;
+                        @include compatible(transform, translate(-1rem, -50%));
+                        @include compatible(transition, all 0.3s ease-in-out);
+                    }
+                }
+                &:hover {
+                    transform: translate(3%, 0);
+                    transition: 0.53s;
+                    a {
+                        &::after {
+                            opacity: 1;
+                            overflow: visible;
+                        }
+                    }
+                }
+            }
+        }
+        .compare {
+            p {
+                font-size: 0.85rem;
+            }
+        }
+        .tag-product {
+            .tag {
+                padding: 4px 8px;
+                background-color: rgb(241, 241, 241);
+                border-radius: 5px;
+                margin: 5px 10px 5px 0;
+                display: inline-block;
+                font-size: 0.8rem;
+            }
+            .active {
+                background-color: $yellow;
+            }
+        }
+        .banner-aside {
+            margin: 30px 0;
+        }
+    }
+    article {
+        .control {
+            border: 1px solid gray;
+            .control-left {
+                padding: 0px 15px;
+                i {
+                    font-size: 1.5rem;
+                    margin-right: 20px;
+                    color: gray;
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+            }
+            .control-right {
+                padding: 10px 15px;
+                ul {
+                    margin: 0;
+                    a {
+                        border: none;
+                        color: gray;
+                        &:hover {
+                            color: $yellow;
+                        }
+                    }
+                    .active {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+        .list-product {
+            .item-product {
+                cursor: pointer;
+                .name {
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+                .price {
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    color: $yellow;
+                    position: relative;
+                    margin-right: 20px;
+                    span {
+                        position: absolute;
+                        top: 0;
+                        font-size: 0.8rem;
+                    }
+                    &::after {
+                        content: " - ";
+                        position: absolute;
+                        right: -15px;
+                        font-weight: 500;
+                        color: $gray;
+                    }
+                }
+                .old-price {
+                    font-size: 1rem;
+                    text-decoration: line-through;
+                    color: $gray;
+                    font-weight: 300;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        top: 0;
+                        font-size: 0.6rem;
+                    }
+                }
+                &:hover {
+                    color: $yellow;
+                    .btn-custom {
+                        background-color: $yellow;
+                    }
+                }
+            }
+        }
+        .check {
+            &:checked ~ .list-product {
+                display: none;
+            }
+            &:not(:checked) ~ .grid-product {
+                display: none;
+            }
+        }
+        .grid {
+            cursor: pointer;
+            &:hover {
+                .name {
+                    color: $yellow;
+                }
+            }
+            .name {
+                margin-top: 40px;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .price {
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: $yellow;
+                position: relative;
+                margin-right: 20px;
+            }
+            .detail {
+                font-size: 0.85rem;
+                margin-right: 80px;
+            }
+            .action-items {
+                padding-right: 30px;
+            }
+        }
+    }
+}

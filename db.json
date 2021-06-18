@@ -1,0 +1,323 @@
+{
+    "tag": [
+        {
+            "id": 1,
+            "tagName": "Rượu Cổ"
+        },
+        {
+            "id": 2,
+            "tagName": "Rẻ"
+        },
+        {
+            "id": 3,
+            "tagName": "Chất lượng"
+        },
+        {
+            "id": 4,
+            "tagName": "Đắt"
+        },
+        {
+            "id": 5,
+            "tagName": "Không say"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "categoryId": 1,
+            "tagId": 1,
+            "img": "1.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 2,
+            "categoryId": 1,
+            "tagId": 1,
+            "img": "2.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 3,
+            "categoryId": 2,
+            "tagId": 1,
+            "img": "3.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 4,
+            "categoryId": 4,
+            "tagId": 4,
+            "img": "4.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 5,
+            "categoryId": 1,
+            "tagId": 3,
+            "img": "5.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 6,
+            "categoryId": 1,
+            "tagId": 3,
+            "img": "6.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 7,
+            "categoryId": 1,
+            "tagId": 2,
+            "img": "7.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 8,
+            "categoryId": 1,
+            "tagId": 4,
+            "img": "8.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "new",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 9,
+            "categoryId": 1,
+            "tagId": 2,
+            "img": "9.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 10,
+            "categoryId": 1,
+            "tagId": 2,
+            "img": "9.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 4500,
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 11,
+            "categoryId": 1,
+            "tagId": 2,
+            "img": "1.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 12,
+            "categoryId": 1,
+            "tagId": 3,
+            "img": "2.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 13,
+            "categoryId": 7,
+            "tagId": 4,
+            "img": "3.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 14,
+            "categoryId": 8,
+            "tagId": 5,
+            "img": "4.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 15,
+            "categoryId": 6,
+            "tagId": 5,
+            "img": "5.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 16,
+            "categoryId": 8,
+            "tagId": 5,
+            "img": "6.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 17,
+            "categoryId": 2,
+            "tagId": 5,
+            "img": "7.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 18,
+            "categoryId": 10,
+            "tagId": 2,
+            "img": "8.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 450,
+            "status": "hot",
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        },
+        {
+            "id": 19,
+            "categoryId": 3,
+            "tagId": 3,
+            "img": "9.jpg",
+            "name": "Rượu vang đà lạt",
+            "price": 370,
+            "old_price": 4500,
+            "detail": "Một hợp chất có trong rượu vang được gọi là resvantro có khả năng làm tăng tối đa tuổi thọ. Resvantro còn có khả năng ngăn chặn mật đô oxy hóa của protein béo"
+        }
+    ],
+    "category": [
+        {
+            "id": 1,
+            "name": "Rượu Chivas",
+            "quantity": "36"
+        },
+        {
+            "id": 2,
+            "name": "Hàng độc - Rượu độc đáo",
+            "quantity": "40"
+        },
+        {
+            "id": 3,
+            "name": "Rượu Vodka",
+            "quantity": "40"
+        },
+        {
+            "id": 4,
+            "name": "Rượu Maddocal",
+            "quantity": "40"
+        },
+        {
+            "id": 5,
+            "name": "Rượu Vang Ý",
+            "quantity": "40"
+        },
+        {
+            "id": 6,
+            "name": "Rượu Brandy",
+            "quantity": "40"
+        },
+        {
+            "id": 7,
+            "name": "Rượu Cognac",
+            "quantity": "40"
+        },
+        {
+            "id": 8,
+            "name": "Rượu Vang Pháp",
+            "quantity": "40"
+        },
+        {
+            "id": 9,
+            "name": "Rượu Remy Martin",
+            "quantity": "40"
+        },
+        {
+            "id": 10,
+            "name": "Rượu Whisky",
+            "quantity": "40"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "username": "linh",
+            "password": "123",
+            "fullname": "Lê Ngọc Linh",
+            "email": "linhle24680@gmail.com",
+            "gender": "true",
+            "birthday": "2000-07-30"
+        },
+        {
+            "id": 2,
+            "username": "admin",
+            "password": "admin",
+            "fullname": "Lee Ngoc Linh",
+            "email": "admin@sun.edu.vn",
+            "gender": "true",
+            "birthday": "1995-12-21"
+        },
+        {
+            "id": 3,
+            "username": "test",
+            "password": "admin",
+            "fullname": "Lee Ngoc Linh",
+            "email": "admin@sun.edu.vn",
+            "gender": "true",
+            "birthday": "1995-12-21"
+        },
+        {
+            "id": 4,
+            "username": "check",
+            "password": "admin",
+            "fullname": "Lee Ngoc Linh",
+            "email": "admin@sun.edu.vn",
+            "gender": "true",
+            "birthday": "1995-12-21"
+        }
+    ]
+}

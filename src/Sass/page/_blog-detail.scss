@@ -1,0 +1,136 @@
+.blog-detail {
+    padding-bottom: 50px;
+    aside {
+        font-family: Arial, Helvetica, sans-serif;
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            padding: 1.5rem 0 0.35rem;
+        }
+        .new-post {
+            .post-items {
+                padding: 10px 0;
+                a {
+                    text-transform: uppercase;
+                    font-size: 0.85rem;
+                    font-weight: 550;
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+                p {
+                    color: gray;
+                    font-size: 0.75rem;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .tag {
+            padding: 4px 8px;
+            background-color: rgb(241, 241, 241);
+            border-radius: 5px;
+            margin: 5px 10px 5px 0;
+            display: inline-block;
+            font-size: 0.8rem;
+        }
+        .active {
+            background-color: $yellow;
+        }
+        .blog-video {
+            margin-top: 1.5rem;
+        }
+    }
+    article {
+        h1 {
+            font-size: calc(1vw + 1rem);
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 2px;
+            word-spacing: 3px;
+            padding: 30px 0;
+        }
+
+        p {
+            font-style: italic;
+            letter-spacing: 0.6px;
+        }
+        .cmt {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+        label {
+            &::after {
+                content: " *";
+                color: red;
+            }
+        }
+
+        .btn-custom {
+            background-color: #eeeeee;
+            border-radius: 5px;
+            color: black;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .comment {
+            padding: 0 15px;
+            .header-cmt {
+                background-color: #eeeeee;
+                padding: 15px 0px 15px 25px;
+                margin-top: 20px;
+                font-style: italic;
+                border-radius: 5px;
+                color: #8a8787;
+                .header-cmt__left {
+                    h3 {
+                        margin: 0;
+                        font-weight: 400;
+                        font-size: 1rem;
+                    }
+                    .info {
+                        padding-right: 20px;
+                        border-right: 1px solid $gray;
+                    }
+                    .time {
+                        padding-left: 20px;
+                    }
+                }
+                .header-cmt__right {
+                    a {
+                        text-decoration: underline;
+                        color: #8a8787;
+                        padding-right: 20px;
+                    }
+                }
+            }
+            .content-cmt {
+                padding: 15px 0 5px 25px;
+                font-style: normal;
+                font-size: 0.9rem;
+                letter-spacing: 0;
+                color: #8a8787;
+            }
+            nav {
+                .pagination {
+                    .page-item {
+                        margin-left: 1rem;
+                        .page-link {
+                            padding: 0.4rem 0.8rem;
+                            color: black;
+                        }
+                        .active {
+                            background-color: gray;
+                            color: white;
+                        }
+                        .arrow {
+                            background-color: black;
+                            color: white;
+                            border-radius: 0;
+                            padding: 0.4rem 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

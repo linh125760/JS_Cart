@@ -1,0 +1,44 @@
+extends ../base/base.pug 
+
+block variables
+    - const title = "Đăng Ký";
+    - const current = "/register.html";
+
+    include ../component/breadcrumb
+    include ../variables/var_breadcrumb
+
+mixin input_form(id, title, type)
+    .form-group.col-md-10.row
+        label.col-sm-2.col-form-label(for=id)= title 
+        .col-sm-10
+            input.form-control(id=id type=type)
+block layout 
+    include ../partials/header 
+    +breadcrumb(register, current)
+    .container.login
+        .login-header.d-flex.justify-content-between
+            +title_page("Đăng Nhập")
+            a(href="/login.html").btn-custom Đăng Nhập 
+        form.row.justify-content-center.login-form
+            .col-md-10.form-title
+                h4.col-sm-12 Thông tin cá nhân
+            +input_form("firstName", "Tên trước*", "text")
+            +input_form("lastName", "Tên sau*", "text")
+            +input_form("email", "Email*", "email")
+            +input_form("pass", "Password*", "password")
+            .col-md-10.row.mb-3
+                .col-sm-10.offset-md-2
+                    .form-check
+                        input#exampleCheck1.form-check-input(type='checkbox')
+                        label.form-check-label(for='exampleCheck1') Đăng ký nhận bản tin
+            .col-md-10.form-title
+                h4.col-sm-12 Thông tin đăng nhập 
+            +input_form("mk", "Mật khẩu*", "password")
+            +input_form("rmk", "Xác nhận mật khẩu*", "password")
+
+            .col-md-10
+                .col-md-3.offset-md-9.d-flex.justify-content-between
+                    a(href="#").btn-custom Gửi 
+                    a(href="#").btn-custom Quay lại  
+    include ../partials/footer
+

@@ -1,0 +1,59 @@
+extends ../base/base.pug
+
+block variables 
+    - const title = "Thông tin khách hàng";
+    - const current = "/user-info.html";
+
+    include ../variables/var_breadcrumb 
+    include ../variables/var_user-info
+    include ../component/breadcrumb 
+
+mixin form_address(id, name, value, type) 
+    .form-group.row
+        label.col-sm-3.col-form-label(for= id)= name
+        .col-sm-9
+            input.form-control(id= id type=type)
+            span(style='color: red; font-size: 14px')
+
+mixin show_info(name, info)
+    .form-group.row
+        label.col-sm-3.col-form-label= name
+        .col-sm-9
+            .col-form-label= info
+
+mixin form_select(id, name, value) 
+    .form-group.row 
+        label.col-sm-3.col-form-label(for= id)= name 
+        .col-sm-9 
+            select(name=id id=id).form-control
+                option(value=value)= value
+block layout 
+    include ../partials/header 
+    +breadcrumb(info_page, current)
+    section.container.infoPage
+        +title_page("Thanh Toán")
+        .row 
+            .col-md-6.order-2.order-lg-1 
+                form#address
+                    h4 ĐỊA CHỈ NHẬN HÀNG
+                    each info in user_info 
+                        - const {firstName, lastName, company, address, city, country, zipCode, phone} = info;
+                        +form_address("lName", "Họ và tên ", lastName, "text")
+                        +form_address("home", "Địa chỉ ", address, "text")
+                        +form_address("city", "Thành phố ", city, "text")
+                        +form_address("zip", "Postal/ZipCode ", zipCode, "number")
+                        +form_address("phone", "Phone ", phone, "number")
+                        .row.mb-3
+                            .col-sm-9.offset-md-3
+                                .form-check
+                                    input#exampleCheck1.form-check-input(type='checkbox')
+                                    label.form-check-label(for='exampleCheck1') Đặt làm địa chỉ mặc định ?
+                                button.btn-custom(type='submit') XÁC NHẬN
+            .col-md-6.order-1.order-lg-2.list-cart 
+                .user-info
+                    h2 Thông tin đơn hàng
+                    #here
+    include ../partials/footer
+block script 
+    script(src="JS/checkOut.js")
+    script(src="JS/validate.js")

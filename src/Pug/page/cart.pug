@@ -1,0 +1,37 @@
+extends ../base/base.pug
+
+block variables 
+    - const title = "Giỏ Hàng";
+    - const current = "/cart.html";
+
+    include ../component/breadcrumb
+    include ../variables/var_breadcrumb
+    include ../variables/var_cart
+block layout 
+    include ../partials/header
+    +breadcrumb(cart_page, current)
+
+    .container.cart
+        +title_page("Giỏ hàng")
+        table.table.table-bordered
+            colgroup
+                col(width='15%')
+                col(width='35%')
+                col(width='15%')
+                col(width='15%')
+                col(width='15%')
+                col(width='5%')
+            thead
+                tr
+                th(scope='col') Ảnh
+                th(scope='col') Tên Sản Phẩm
+                th(scope='col') Giá
+                th(scope='col') Số lượng
+                th(scope='col') Tổng số
+                th(scope='col') Xóa
+            tbody#cart-body
+        #noCart
+        a.btn-custom(href="checkout.html") Check out
+    include ../partials/footer
+block script 
+    script(src="JS/cart.js") 

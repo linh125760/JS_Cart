@@ -1,0 +1,64 @@
+footer {
+    .menu__footer {
+        padding-top: 50px;
+        h3 {
+            font-size: calc(1rem + 0.2vw);
+            text-transform: uppercase;
+        }
+        p {
+            color: $gray;
+            font-size: 0.9rem;
+        }
+        .footer__menu--items {
+            a {
+                font-size: 0.7rem;
+                font-weight: 500;
+                color: $gray;
+                text-transform: uppercase;
+                &:hover {
+                    color: rgb(3, 229, 245);
+                }
+            }
+        }
+
+        .footer__contact {
+            input {
+                border: 2px solid $gray;
+                padding: 5px 10px;
+            }
+            .icon__contact {
+                padding: 15px 0;
+                a {
+                    margin: 5px;
+                    &:first-child {
+                        margin: 0 5px 0 0;
+                    }
+                }
+            }
+            .btn {
+                position: relative;
+                background-color: black;
+                color: white;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    z-index: 100;
+                    height: 100%;
+                    left: 101%;
+                    border-top: 1.025rem solid transparent;
+                    border-bottom: 1.025rem solid transparent;
+                    border-left: 1.25rem solid black;
+                    border-right: 1.25rem solid transparent;
+                }
+            }
+        }
+    }
+    .footer__bottom {
+        text-align: center;
+        .footer__bottom--left,
+        .footer__bottom--right {
+            margin: 15px 0;
+        }
+    }
+}

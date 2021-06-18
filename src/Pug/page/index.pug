@@ -1,0 +1,89 @@
+extends ../base/base.pug
+
+mixin time-sale(number, format)
+    .col-6.time__items.text-center
+        h3= number 
+        p= format
+
+mixin title(title)
+    .text-center 
+        h2.title= title
+
+mixin blog_item()
+    each blog_post in blog_index 
+        - const {img, title, author, date, content} = blog_post; 
+        .col-lg-6.blog-items 
+            .blog-img
+                img(src="../assets/img/" + img, alt="Blog Image")
+                i.bi.bi-link-45deg.text-center
+            .blog-content
+                h4.title-blog= title 
+                p.info-blog= "Đăng bởi " + author + " | " + date + " | 60 bình luận"
+                p.content-blog.text-justify= content
+                a(href="#") Read more 
+block variables
+    - const title = "Trang Chủ";
+    //- Current để định vị trí của menu (thẻ li có style active)
+    - const current = "/";
+    include ../variables/var_index.pug
+
+block layout
+    include ../partials/header
+
+    section.introduce.d-flex.justify-content-center
+        .col-lg-6.col-md-8.text-center
+            +title("GIỚI THIỆU")
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias eos magni mollitia suscipit amet nemo doloremque corrupti iusto, quo cupiditate possimus? Aliquam illum eaque consequuntur distinctio blanditiis commodi odio ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fugit minima inventore fugiat exercitationem aperiam, animi atque alias sunt asperiores assumenda ut. Sint quaerat nostrum quidem provident magnam! Harum, quaerat?
+            a(href="#").btn-custom Xem Thêm
+
+    section.product__sale.container 
+        .product__sale--bg 
+            .product__sale--tab.row
+                .col-md-7
+                    .product__sale--img
+                        img(src="../assets/img/product-sale.jpg" alt="product sale")
+                .col-md-5
+                    +title_page("Rượu nho năm 1987")
+                    h3.price
+                        | 330.000
+                        sup đ
+                        |
+                    a(href="#").btn-custom Add to cart 
+                    p.detail Một hợp chất có trong rượu vang gọi là Resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro confcos khả năng ngăn chặn mật độ oxy hóa của protein béo.
+                    .time__sale.d-flex.row
+                        +time-sale(334, "NGÀY")
+                        +time-sale(20, "GIỜ")
+                        +time-sale(15, "PHÚT")
+                        +time-sale(25, "GIÂY")
+
+    section.new-products.container 
+        +title("SẢN PHẨM MỚI")
+        +carousel_product(new_product)
+    section.gallery.container-fluid
+        .row 
+            each img_gallery in gallery
+                - const {img, name, year} = img_gallery;
+                .col-lg-3.col-md-6.col-sm-6.p-0
+                    .gallery-img(style="background-image: url(./assets/img/" + img + ")")
+                        .content-img.text-center
+                            span= year 
+                            h2= name
+    section.hot-products.container 
+        +title("SẢN PHẨM BÁN CHẠY")
+        +carousel_product(hot_product)
+
+    section.layout-bottom.container
+        .row
+            .col-lg-8.col-md-6 
+                +title("TIN TỨC & BLOG")
+                .row
+                    +blog_item()
+
+            .col-lg-4.col-md-6.right
+                +title("KHÁCH HÀNG")
+                .feedback.d-flex.text-center.justify-content-center
+                    span.span "
+                p.sub-content.text-center Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên  từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn, Vang nổ đỏ Thăng Long...
+                a(href="#").text-center.d-block Read more 
+                +carousel_feedback()
+    include ../partials/footer

@@ -1,0 +1,49 @@
+include ../variables/var_footer.pug
+
+mixin icon_contact(la)
+    a(href="#")
+        i(class="bi " + la)
+
+footer
+    .container
+        .row 
+            each img_brand in footer_brand_img
+                - const {img, alt} = img_brand;
+                .footer__brand.col-md-4.d-lex
+                    img(src="../assets/img/" + img, alt=alt)
+
+        .row.menu__footer
+            each block_menu in footer_menu
+                - const {title, items} = block_menu;
+                .col-lg-2.col-md-6.footer__menu--items 
+                    h3= title
+                    ul 
+                        each menu in items
+                            - const {menu_items, link} = menu;
+                            li
+                                a(href=link)=menu_items 
+
+            .col-lg-4.footer__contact 
+                h3 Gửi Email
+                p Gửi email cho chúng tôi để được hỗ trợ
+                .input-group 
+                    input(type="email" placeholder="Nhập Email")
+                    button.btn Gửi
+                .icon__contact
+                    +icon_contact("bi-twitter")
+                    +icon_contact("bi-google")
+                    +icon_contact("bi-globe")
+                    +icon_contact("bi-linkedin")
+                    +icon_contact("bi-facebook")
+            .col-lg-4.footer__info
+                h3 Liên hệ
+                p Tầng 4, tòa nhà Hanoi Group Số 442 Đội Cấn, P.Cống Vị, Q.Ba Đình, Hà Nội 
+                p (04) 0667 2332 - (04) 3786 8904
+                p (08) 06680 9686 - Support@bizweb.vn
+    hr
+    .container
+        .d-md-flex.footer__bottom.justify-content-between.flex-row-reverse
+            .footer__bottom--left
+                img(src="../assets/img/payment-method.png" alt="Paymeny Method")
+            .footer__bottom--right
+                p © Copyright 2008-2014 DKT Technology JSC

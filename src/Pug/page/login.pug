@@ -1,0 +1,41 @@
+extends ../base/base.pug 
+
+block variables
+    - const title = "Đăng Nhập";
+    - const current = "/login.html";
+
+    include ../component/breadcrumb
+    include ../variables/var_breadcrumb
+
+mixin input_form(id, title, type)
+    .form-group.col-md-10.row
+        label.col-sm-2.col-form-label(for=id)= title 
+        .col-sm-10
+            input.form-control(id=id type=type)
+            span
+block layout 
+    include ../partials/header 
+    +breadcrumb(login, current)
+    .container.login
+        .login-header.d-flex.justify-content-between
+            +title_page("Đăng Nhập")
+            a(href="#").btn-custom Đăng Ký 
+        form.row.justify-content-center.login-form
+            .col-md-10.form-title
+                h4.col-sm-12 Khách hàng đăng nhập
+                p.col-sm-12 Nếu bạn có một tài khoản, xin vui lòng đăng nhập.
+
+            +input_form("email", "Email*", "email")
+            +input_form("pass", "Password*", "password")
+            .col-md-10.row.mb-3
+                .col-sm-10.offset-md-2
+                    .form-check
+                        input#exampleCheck1.form-check-input(type='checkbox')
+                        label.form-check-label(for='exampleCheck1') Quên mật khẩu
+            .col-md-10.row
+                .col-sm-10.offset-md-2
+                    button.btn-custom(type='submit') Đăng Nhập
+    include ../partials/footer
+
+block script 
+    script(src="JS/login.js")

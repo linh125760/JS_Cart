@@ -1,0 +1,60 @@
+extends ../base/base.pug 
+
+block variables 
+    - const title = "Liên Hệ";
+    - const current = "/contact.html";
+
+    include ../component/breadcrumb.pug
+    include ../variables/var_breadcrumb.pug
+
+mixin form_group(id, title, type, placeholder)
+    .form-group.row
+        label.col-sm-2.col-form-label(for=id)= title
+        .col-sm-10
+            input.form-control(id= id type= type placeholder= placeholder)
+
+mixin text_area(id, title)
+    .form-group.row
+        label.col-sm-2.col-form-label(for= id)= title
+        .col-sm-10
+            textarea.form-control(id= id rows='5')
+
+mixin contact_detail(i, text)
+    p 
+        i(class= i)= text
+
+mixin contact_icons(i)
+    a(href="#")
+        i(class= i) 
+
+block layout 
+    include ../partials/header 
+    +breadcrumb(contact_page, current)
+    section.container.contact
+        +title_page("Liên Hệ")
+        .row.contact__area
+            .col-md-8 
+                iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4028047296374!2d105.78178731490453!3d21.01656288600497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab172e0d6ce3%3A0xf2a2d0d2aa51a983!2sSun%20Asterisk%20Vi%E1%BB%87t%20Nam!5e0!3m2!1svi!2s!4v1621911445759!5m2!1svi!2s' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy')
+
+                form(action="#") 
+                    +form_group("yourName", "Your Name", "text", "Enter Your Name")
+                    +form_group("yourEmail", "Your Email", "mail", "Enter Your Email")
+                    +form_group("subject", "Subject", "text", "Your Subject")
+                    +text_area("textBox", "Your Message")
+                    .row 
+                        .col-sm-2 
+                        .col-sm-10 
+                            a(href="#").btn-custom Gửi 
+            .col-md-4 
+                img(src="../assets/img/logo.png" alt="Logo Image")
+                +contact_detail("bi bi-geo-alt-fill", " Tầng 4, tòa nhà Hanoi Group, số 442 Đội Cẩn, P.Cống Vị, Q.Ba Đình, Hà Nội")
+                +contact_detail("bi bi-telephone-fill", " (04) 6674 2332")
+                +contact_detail("bi bi-envelope-fill", " support@milano.com")
+                h4 FOLLOW US: 
+                +contact_icons("bi-facebook")
+                +contact_icons("bi-google")
+                +contact_icons("bi-twitter")
+                +contact_icons("bi-youtube")
+                +contact_icons("bi-linkedin")
+
+    include ../partials/footer

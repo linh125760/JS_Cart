@@ -1,0 +1,25 @@
+.infoPage {
+    padding-bottom: 50px;
+    h4 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding: 20px 0;
+    }
+    a:not(.btn-custom) {
+        text-decoration: underline;
+        color: rgb(27, 174, 194);
+        font-size: 1rem;
+        &:hover {
+            color: $yellow;
+        }
+    }
+    .form-check {
+        margin-bottom: 20px;
+    }
+    .btn-custom {
+        margin-right: 15px;
+    }
+    hr {
+        margin-top: 40px;
+    }
+}

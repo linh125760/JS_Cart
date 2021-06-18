@@ -1,0 +1,75 @@
+extends ../base/base 
+
+block variables 
+    - const title = "Sản Phẩm";
+    - const current = "/products.html";
+
+    include ../component/breadcrumb 
+    include ../variables/var_breadcrumb 
+    include ../variables/var_product
+    include ../variables/var_blog
+mixin product_grid(img, name, price, detail)
+    .row.grid
+        .col-md-4 
+            img(src="../assets/img/"+img, alt="product Image")
+        .col-md-8
+            h3.name= name 
+            h3.price= price + "đ" 
+            p.detail= detail 
+            .d-flex
+                .action-items
+                    a(href="#").btn-custom ADD TO CART  
+                .action-items
+                    i.bi.bi-heart-fill Yêu thích
+                .action-items
+                    i.bi.bi-reception-4 So sánh
+    hr
+block layout 
+    include ../partials/header
+    +breadcrumb(products_page, current)
+    section.container.product 
+        .banner-product
+        .row
+            aside.col-md-3
+                .category
+                    +title_page("Danh mục sản phẩm")
+                    #cate
+                .compare
+                    +title_page("So sánh sản phẩm")
+                    p Bạn chưa có sản phẩm nào để so sánh
+                .tag-product
+                    +title_page("Tag sản phẩm")
+                    #tag
+                .banner-aside
+                    img(src="../assets/img/ads.jpg" alt="")
+
+            article.col-md-9
+                input#check.check(type='checkbox' hidden)
+
+                .control.d-flex.justify-content-between.align-items-center
+                    .control-left
+                        label.a(for='check')
+                            i.bi.bi-grid-3x3-gap-fill
+                        label.b(for='check')
+                            i.bi.bi-list-ul
+                    .control-right
+                        ul.pagination.pagination-sm
+                            li.page-item
+                                a.page-link()
+                                    i.bi.bi-caret-left-fill
+                            li.page-item
+                                a#1.page-link(onclick='getId(this.id)') 1
+                            li.page-item
+                                a#2.page-link(onclick='getId(this.id)') 2
+                            li.page-item
+                                a#3.page-link(onclick='getId(this.id)') 3
+                            li.page-item
+                                a.page-link()
+                                    i.bi.bi-caret-right-fill
+                .list-product.row#add
+                .grid-product#add1
+    include ../partials/footer
+block script 
+    script(src="JS/panigation.js")
+    script(src="JS/main.js") 
+    script(src="JS/cart.js") 

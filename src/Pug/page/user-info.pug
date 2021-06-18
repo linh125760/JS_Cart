@@ -1,0 +1,104 @@
+extends ../base/base.pug
+
+block variables 
+    - const title = "Thông tin khách hàng";
+    - const current = "/user-info.html";
+
+    include ../variables/var_breadcrumb 
+    include ../variables/var_user-info
+    include ../component/breadcrumb 
+
+mixin form_address(id, name, value) 
+    .form-group.row
+        label.col-sm-3.col-form-label(for= id)= name
+        .col-sm-9
+            input.form-control(id= id type="text" value= value)
+
+mixin show_info(name, info)
+    .form-group.row
+        label.col-sm-3.col-form-label= name
+        .col-sm-9
+            .col-form-label= info
+
+mixin form_select(id, name, value) 
+    .form-group.row 
+        label.col-sm-3.col-form-label(for= id)= name 
+        .col-sm-9 
+            select(name=id id=id).form-control
+                option(value=value)= value
+block layout 
+    include ../partials/header 
+    +breadcrumb(info_page, current)
+    section.container.infoPage
+        +title_page("Địa Chỉ")
+        .row 
+            .col-md-6.order-2.order-lg-1 
+                form
+                    h4 ĐỊA CHỈ CỦA BẠN
+                    each info in user_info 
+                        - const {firstName, lastName, company, address, city, country, zipCode, phone} = info;
+                        +form_address("fName", "Tên ", firstName)
+                        +form_address("lName", "Họ & tên đệm ", lastName)
+                        +form_address("company", "Công ty ", company)
+                        +form_address("address", "Địa chỉ ", address)
+                        +form_address("city", "Thành phố ", city)
+                        +form_address("country", "Quốc tịch ", country)
+                        +form_address("zip", "Postal/ZipCode ", zipCode)
+                        +form_address("phone", "Phone ", phone)
+                        .row.mb-3
+                            .col-sm-9.offset-md-3
+                                .form-check
+                                    input#exampleCheck1.form-check-input(type='checkbox')
+                                    label.form-check-label(for='exampleCheck1') Đặt làm địa chỉ mặc định ?
+                                a(href="").btn-custom Chỉnh sửa địa chỉ 
+                                a(href="").btn-custom Xóa
+                hr
+                form
+                    each info in user_info 
+                        - const {firstName, lastName, company, address, city, country, zipCode, phone} = info;
+                        +show_info("Tên ", firstName)
+                        +show_info("Họ & tên đệm ", lastName)
+                        +show_info("Công ty ", company)
+                        +show_info("Địa chỉ ", address)
+                        +show_info("Thành phố ", city)
+                        +show_info("Quốc tịch ", country)
+                        +show_info("Postal/ZipCode ", zipCode)
+                        +show_info("Phone ", phone)
+                        .text-right
+                            a(href="#") Chỉnh sửa địa chỉ
+                hr
+                form
+                    each info in user_info 
+                        - const {firstName, lastName, company, address, city, country, zipCode, phone} = info;
+                        +show_info("Tên ", firstName)
+                        +show_info("Họ & tên đệm ", lastName)
+                        +show_info("Công ty ", company)
+                        +show_info("Địa chỉ ", address)
+                        +show_info("Thành phố ", city)
+                        +show_info("Quốc tịch ", country)
+                        +show_info("Postal/ZipCode ", zipCode)
+                        +show_info("Phone ", phone)
+                        .text-right
+                            a(href="#") Chỉnh sửa địa chỉ
+            .col-md-6.order-1.order-lg-2 
+                form
+                    h4 
+                        a(href="#") Thêm địa chỉ
+                    each info in user_info 
+                        - const {firstName, lastName, company, address, city, country, zipCode, phone} = info;
+                        +form_address("fName", "Tên ", firstName)
+                        +form_address("lName", "Họ & tên đệm ", lastName)
+                        +form_address("company", "Công ty ", company)
+                        +form_address("address", "Địa chỉ ", address)
+                        +form_select("city", "Thành phố ", city)
+                        +form_select("city", "Quốc tịnh ", country)
+                        +form_address("zip", "Postal/ZipCode ", zipCode)
+                        +form_address("phone", "Phone ", phone)
+                        .row.mb-3
+                            .col-sm-9.offset-md-3
+                                .form-check
+                                    input#exampleCheck1.form-check-input(type='checkbox')
+                                    label.form-check-label(for='exampleCheck1') Đặt làm địa chỉ mặc định ?
+                                a(href="").btn-custom Chỉnh sửa địa chỉ 
+                                a(href="").btn-custom Xóa
+    include ../partials/footer

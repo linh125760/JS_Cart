@@ -1,0 +1,70 @@
+mixin carousel-header()
+    #carousel-header.carousel.slide(data-ride='carousel')
+
+        ol.carousel-indicators
+            li.active(data-target='#carousel-header' data-slide-to='0')
+            li(data-target='#carousel-header' data-slide-to='1')
+            li(data-target='#carousel-header' data-slide-to='2')
+
+        .carousel-inner
+            each item in carousel_header
+                if item.img === carousel_header[0].img
+                    div.carousel-item.active
+                        img.d-block.w-100(src="../assets/img/" + item.img, alt="Slide image")
+                        .carousel-text
+                            p.carousel-title=item.title
+                                span= item.year 
+                                span.carousel-name=item.name
+                else
+                    div.carousel-item
+                        img.d-block.w-100(src="../assets/img/" + item.img, alt="Slide image")
+                        .carousel-text
+                            p.carousel-title=item.title
+                                span= item.year 
+                                span.carousel-name=item.name
+
+        a.carousel-control-prev(href='#carousel-header' role='button' data-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+            span.sr-only Previous
+        a.carousel-control-next(href='#carousel-header' role='button' data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+            span.sr-only Next
+
+mixin carousel_product(array)
+    .owl-carousel.owl-theme
+        each product_item in array 
+            - const {img, name, price, old_price} = product_item;
+            .item.text-center
+                .img-items
+                    img(src="../assets/img/" + img, alt="Image")
+
+                h3.name= name 
+                .d-flex.text-center.align-items-center.justify-content-center
+                    h4.price= price
+                        span đ
+                    h4.old-price= old_price
+                        span đ
+                a(href="#").btn-custom Add to cart 
+
+mixin carousel_feedback()
+    #carousel-feedback.carousel.slide(data-ride='carousel')
+
+        ol.carousel-indicators
+            li.active(data-target='#carousel-feedback' data-slide-to='0')
+            li(data-target='#carousel-feedback' data-slide-to='1')
+            li(data-target='#carousel-feedback' data-slide-to='2')
+
+        .carousel-inner
+            each item in feedback
+                if item.img === feedback[0].img
+                    div.carousel-item.active
+                        img.d-block(src="../assets/img/" + item.img, alt="Slide image")
+                        .carousel-caption.d-none.d-md-block
+                            h5.name= item.name
+                            h5.job= item.job
+                else
+                    div.carousel-item
+                        img.d-block(src="../assets/img/" + item.img, alt="Slide image")
+                        .carousel-caption.d-none.d-md-block
+                            h5.name= item.name
+                            h5.job= item.job

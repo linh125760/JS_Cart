@@ -1,0 +1,35 @@
+@mixin compatible($atribute, $params) {
+    #{$atribute}: #{$params};
+    -webkit-#{$atribute}: #{$params};
+    -khtml-#{$atribute}: #{$params};
+    -moz-#{$atribute}: #{$params};
+    -ms-#{$atribute}: #{$params};
+    -o-#{$atribute}: #{$params};
+}
+
+@mixin type-product($color) {
+    .item {
+        &:nth-child(1) {
+            .img-items::after {
+                background-color: #{$color};
+                border-color: #{$color};
+                @include compatible(box-shadow, (0 0 0 3px #ffffff, 0 0 0 4px #{$color}));
+            }
+        }
+        .img-items {
+            position: relative;
+            overflow: hidden;
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 1.2rem 1.5rem 0.2rem;
+                color: #ffffff;
+                text-transform: capitalize;
+                font-size: 0.8rem;
+                font-weight: 400;
+                @include compatible(transform, translate(-36%, -25%) rotate(-45deg));
+            }
+        }
+    }
+}

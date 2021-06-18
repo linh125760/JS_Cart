@@ -1,0 +1,109 @@
+extends ../base/base 
+
+block variables 
+    - const title = "Chi tiết sản phẩm";
+    - const current = "/product-detail.html";
+
+    include ../component/breadcrumb 
+    include ../variables/var_index.pug
+    include ../variables/var_breadcrumb
+
+mixin title(title)
+    .text-center 
+        h2.title= title
+block layout 
+    include ../partials/header
+    +breadcrumb(product_detail, current)
+    section.container.product-detail
+        .row.detail-top
+            .col-md-7
+                .product-img
+                    .row 
+                        .col-2.d-flex
+                            .thumbnail.align-items-center 
+                                img.img-thumbnail(src="../assets/img/1.jpg" alt="")
+                                img.img-thumbnail(src="../assets/img/2.jpg" alt="")
+                                img.img-thumbnail(src="../assets/img/3.jpg" alt="")
+                                img.img-thumbnail(src="../assets/img/4.jpg" alt="")
+                                img.img-thumbnail(src="../assets/img/5.jpg" alt="")
+                        .col-10
+                            .big-img
+                                img(src="../assets/img/3.jpg" alt="")
+            .col-md-5.product-info
+                +title_page("RƯỢU NHO NĂM 1978")
+                h2.price 330.000
+                    sup đ
+                hr
+                .star.d-flex
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-half
+                    i.bi.bi-star
+                    span 1 Review(s) | Add Your Review
+                hr
+                h3 Màu sắc
+                .d-flex 
+                    .square.bg-warning
+                    .square.bg-dark
+                    .square.bg-danger
+                h3 Kích cỡ
+                select#size(name='size')
+                    option(value='big') Loại to
+                    option(value='medium') Trung bình
+                    option(value='small') Loại nhỏ
+                h3 Số lượng
+                .d-flex
+                    input(type="number" value="1").add-number
+                    a(href="#").btn-custom ADD TO CART
+                .d-flex.action
+                    .action-items
+                        a(href="#") 
+                            i.bi.bi-heart-fill 
+                                span Yêu Thích
+                    .action-items
+                        a(href="#") 
+                            i.bi.bi-reception-4 
+                                span So Sánh
+                    .action-items
+                        a(href="#") 
+                            i.bi.bi-envelope-fill
+                                span Email
+                h3 Mô tả
+                p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ oxy hóa của protein béo.
+                .d-flex.social 
+
+        .row.detail-bottom
+            .col-lg-8 
+                .tabs
+                    .tab
+                        input(name="checkbox-tabs-group" checked type="radio" id="checkbox1").checkboxtab 
+                        label(for="checkbox1") Đặc điểm nổi bật
+                        .content 
+                            p Phần lớn rượu vang pháp đều được đặt tên theo xuất xứ của nó, khi nói đến vang pháp thì địa điểm sản xuất là điều quan trọng nhất.Nếu là rượu AOC thì tên loại nho dùng để làm ra chai rượu đó không được phép lêu ra. Rượu vang pháp được xếp hạng dựa trên một hệ thống giai cấp cao thấp khác nhau tùy theo nơi sản xuất ra nó. Nói chung ranh giới của nơi sản xuất càng thu hẹp bao nhiêu rượu càng cao cấp bấy nhiêu.
+                            p Phần lớn rượu vang pháp đều được đặt tên theo xuất xứ của nó, khi nói đến vang pháp thì địa điểm sản xuất là điều quan trọng nhất.Nếu là rượu AOC thì tên loại nho dùng để làm ra chai rượu đó không được phép lêu ra. Rượu vang pháp được xếp hạng dựa trên một hệ thống giai cấp cao thấp khác nhau tùy theo nơi sản xuất ra nó. Nói chung ranh giới của nơi sản xuất càng thu hẹp bao nhiêu rượu càng cao cấp bấy nhiêu.
+                            p Trong một thế giới các thương hiệu quốc tế, nơi mà nguồn gốc không quan trọng, chỉ quan tâm chất lượng. I'm Best
+
+                    .tab
+                        input(name="checkbox-tabs-group" type="radio" id="checkbox2").checkboxtab 
+                        label(for="checkbox2") Thông tin sản phẩm
+                        .content    
+                            p Tất cả những phẩm chất làm cho nó đáng giá dựa trên nhiều khía cạnh của nó. Pháp là nước sản xuất tất cả các phong cách của rượu, từ các loại rượu vang mát của Thung lũng Loire, lòng trắng phong cách của Alsace, thông qua các tác phẩm kinh điển của Bordeaux và Burgundy. Các loại rượu vang ấm áp của Languedoc Roussillon và , tràn ngập ánh mặt trời và độc đáo trong fastnesses bắc của họ là dòng champagne hảo hạng.
+                            p Trong một thế giới của các thương hiệu quốc tế, nơi mà nguồn gốc không quan trọng, Pháp cung cấp một đặc tính thay thế. Người ta nói nhiều về terroir, của nơi này và các nền văn hóa mà từ đó một loại rượu đi kèm. Nó làm cho mỗi loại rượu khác nhau, làm cho nhiều người trong số họ đặc biệt không có sự đồng nhất ở đây.
+                            p Trong một thế giới của các thương hiệu quốc tế, nơi mà nguồn gốc không quan trọng, Pháp cung cấp một đặc tính thay thế. Người ta nói nhiều về terroir, của nơi này và các nền văn hóa mà từ đó một loại rượu đi kèm.
+
+                    .tab
+                        input(name="checkbox-tabs-group" type="radio" id="checkbox3").checkboxtab 
+                        label(for="checkbox3") Đánh giá
+                        .content
+                            p Phần lớn rượu vang pháp đều được đặt tên theo xuất xứ của nó, khi nói đến vang pháp thì địa điểm sản xuất là điều quan trọng nhất.Nếu là rượu AOC thì tên loại nho dùng để làm ra chai rượu đó không được phép lêu ra. Rượu vang pháp được xếp hạng dựa trên một hệ thống giai cấp cao thấp khác nhau tùy theo nơi sản xuất ra nó. Nói chung ranh giới của nơi sản xuất càng thu hẹp bao nhiêu rượu càng cao cấp bấy nhiêu.
+                            p Phần lớn rượu vang pháp đều được đặt tên theo xuất xứ của nó, khi nói đến vang pháp thì địa điểm sản xuất là điều quan trọng nhất.Nếu là rượu AOC thì tên loại nho dùng để làm ra chai rượu đó không được phép lêu ra. Rượu vang pháp được xếp hạng dựa trên một hệ thống giai cấp cao thấp khác nhau tùy theo nơi sản xuất ra nó. Nói chung ranh giới của nơi sản xuất càng thu hẹp bao nhiêu rượu càng cao cấp bấy nhiêu.
+                            p Trong một thế giới các thương hiệu quốc tế, nơi mà nguồn gốc không quan trọng, chỉ quan tâm chất lượng. I'm Best
+
+            .col-lg-4
+                img(src="../assets/img/gallery-2.jpg" alt="")
+        .row.mt-5
+            .col-12
+                +title("SẢN PHẨM LIÊN QUAN")
+                +carousel_product(new_product)
+    include ../partials/footer

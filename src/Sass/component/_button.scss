@@ -1,0 +1,16 @@
+.btn-custom {
+    padding: 5px 10px;
+    background-color: black;
+    color: white !important;
+    transition: all 0.8s;
+    outline: none;
+    font-size: 0.85rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline-block;
+    &:hover {
+        background-color: $yellow;
+        outline: none;
+        color: white;
+    }
+}

@@ -1,0 +1,98 @@
+extends ../base/base 
+
+block variables 
+    - const title = "Chi tiết bài viết";
+    - const current = "/blog-detail.html";
+
+    include ../component/breadcrumb 
+    include ../variables/var_breadcrumb 
+    include ../variables/var_blog
+
+mixin form_group(id, title, type)
+    .form-group.row
+        label.col-sm-2.col-form-label(for=id)= title
+        .col-sm-10
+            input.form-control(id= id type= type)
+
+mixin text_area(id, title)
+    .form-group.row
+        label.col-sm-2.col-form-label(for= id)= title
+        .col-sm-10
+            textarea.form-control(id= id rows='7')
+block layout 
+    include ../partials/header
+    +breadcrumb(blog_detail, current)
+
+    section.container.blog-detail 
+        +title_page("Blog")
+        .row 
+            aside.col-lg-3.col-md-4.order-2.order-md-1
+                h2 Bài viết mới nhất
+                each items in news_post
+                    - const {img, date, title} = items;
+                    .new-post 
+                        div.row.post-items
+                            div.col-4.pr-0
+                                img(src="../assets/img/" +img, alt="").thumbnail
+                            div.col-8.pr-0
+                                a(href="#")=title
+                                p
+                                    i.bi.bi-calendar
+                                    =date
+
+                h2 Blog Tags
+                each tag in tags 
+                    if tag === tags[0]
+                        a(href="#").tag.active= tag 
+                    else 
+                        a(href="#").tag= tag 
+
+                h2 Latest Video
+                    .blog-video
+                        iframe(width='100%' src='https://www.youtube.com/embed/6lxg0NKZjOE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+            article.col-lg-9.col-md-8.order-1.order-md-2
+                each item_post in post
+                    -const {img, post_title, author, date, content, comment} = item_post;
+                    img(src="../assets/img/" + img, alt="")
+                    h1= post_title
+
+                    p.content= content
+                    p.cmt Đóng góp ý kiến
+                    form(action="#") 
+                        +form_group("name", "Tên", "text")
+                        +form_group("email", "Email", "email")
+                        +text_area("content", "Ý kiến")
+                    .row 
+                        .col-md-10.offset-md-2
+                            a(href="#").btn-custom Gửi ý kiến 
+
+                    .row.comment
+                        h3=`Bình luận (${comment.length})`
+                        each item_cmt in comment 
+                            - const {name, time, content} = item_cmt;
+                            .header-cmt.col-12.d-flex.align-item-center.justify-content-between
+                                .header-cmt__left.d-flex
+                                    h3.info= `Bình luận bởi ${name}`
+                                    h3.time= time
+                                .header-cmt__right
+                                    a(href="#") Trả lời 
+                            p.content-cmt.text-justify= content
+                        nav.col-12
+                            ul.pagination.justify-content-end
+                                li.page-item
+                                    a.page-link.arrow(href='#')
+                                        i.bi.bi-chevron-left
+                                li.page-item
+                                    a.page-link.active(href='#') 1
+                                li.page-item
+                                    a.page-link(href='#') 2
+                                li.page-item
+                                    a.page-link(href='#') 3
+                                li.page-item
+                                    a.page-link.arrow(href='#')
+                                        i.bi.bi-chevron-right 
+
+
+
+    include ../partials/footer

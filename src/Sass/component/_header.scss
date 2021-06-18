@@ -1,0 +1,264 @@
+header {
+    @import url("https://fonts.googleapis.com/css2?family=Charm&display=swap");
+    .top__menu {
+        background-color: white;
+        padding: 10px 0 0 0;
+        .top__menu--items {
+            .line {
+                &:not(:last-of-type)::after {
+                    content: "-";
+                }
+                a {
+                    margin: 0 0.5rem;
+                    font-size: 0.85rem;
+                    color: $gray;
+                    &:hover {
+                        color: $yellow;
+                        @include compatible(transition, all 0.5s linear);
+                    }
+                }
+                .active-menu {
+                    color: $yellow !important;
+                    border-bottom: 2px solid $yellow;
+                }
+            }
+
+            .under {
+                position: relative;
+                transition: all 0.3s ease-in-out;
+                padding-bottom: 4px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    width: 0;
+                    height: 2px;
+                    background-color: #e3ab39;
+                    @include compatible(transform, translateX(-50%));
+                    @include compatible(transition, all 0.3s ease-in-out);
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        .top__menu--search {
+            position: relative;
+            input {
+                padding: 5px 15px;
+                font-style: italic;
+                font-size: 0.8rem;
+                border: 1px solid #eeeeee;
+                border-radius: 5px;
+                &:focus {
+                    outline: none;
+                }
+            }
+            span {
+                position: absolute;
+                right: 10px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .main__menu {
+        background-color: black;
+        .nav {
+            position: relative;
+            ul {
+                margin: 0;
+            }
+            li {
+                display: inline-block;
+                letter-spacing: 1.5px;
+            }
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            .menu {
+                .main_items {
+                    font-weight: 500;
+                    color: white;
+                    text-transform: uppercase;
+                    padding: 0 0 0 25px;
+                    font-size: 0.9rem;
+                    &:hover {
+                        color: $yellow;
+                        @include compatible(transition, all 0.5s linear);
+                    }
+                }
+                .active-menu {
+                    color: $yellow;
+                }
+                .active {
+                    padding: 30px 0;
+                    .sub {
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 300%;
+                            left: 50%;
+                            opacity: 0;
+                            visibility: hidden;
+                            border: 9px solid transparent;
+                            border-bottom: 9px solid #e3ab39;
+                            @include compatible(transition, all 0.3s ease-in-out);
+                            @include compatible(transform, translate(-50%, -1rem));
+                        }
+                    }
+                    &:hover {
+                        > .sub {
+                            &::after {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    .mega_menu {
+                        display: flex;
+                        width: 100%;
+                        position: absolute;
+                        opacity: 0;
+                        left: 50%;
+                        visibility: hidden;
+                        top: 100px;
+                        border: 2px solid #e3ab39;
+                        background-color: white;
+                        z-index: 10000;
+                        @include compatible(transform, translate(-50%, -1rem));
+                        @include compatible(transition, all 0.3s ease-in-out);
+                        a {
+                            display: block;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                        }
+                        h3 {
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                        }
+                        .active {
+                            padding: 20px;
+                            width: 30%;
+                        }
+                        .sub_img {
+                            width: 40%;
+                            padding: 20px;
+                            img {
+                                width: 100%;
+                                max-height: 200px;
+                            }
+                        }
+                    }
+                    &:hover .mega_menu {
+                        opacity: 1;
+                        visibility: visible;
+                        @include compatible(transition, all 0.3s ease-in-out);
+                        @include compatible(transform, translate(-50%, 0));
+                    }
+                }
+                li {
+                    padding: 30px 0;
+                }
+            }
+            .icon {
+                font-size: 2rem;
+                color: $yellow;
+                display: none;
+            }
+        }
+        .menu-mobile {
+            .active-menu {
+                border-bottom: 2px solid $yellow;
+                width: 100%;
+                a {
+                    color: $yellow;
+                }
+            }
+            ul {
+                li {
+                    display: block;
+                    padding: 10px 0;
+                    a {
+                        color: white;
+                        text-transform: uppercase;
+                        letter-spacing: 1.5px;
+                        font-size: 0.85rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+            display: none;
+        }
+    }
+    .carousel-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: rgba(255, 255, 255, 0.8);
+        @include compatible(transform, translate(-50%, -50%));
+        .carousel-title {
+            position: relative;
+            font-size: 18vw;
+            font-family: "Charm", cursive;
+            span {
+                font-family: "Charm", cursive;
+                font-size: 2vw;
+            }
+            .carousel-name {
+                font-family: "Charm", cursive;
+                position: absolute;
+                top: 25%;
+                right: 70%;
+                width: 100%;
+                text-align: right;
+                text-transform: capitalize;
+                font-size: 4vw;
+                @include compatible(transform, translate(30%, -50%));
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        .top__menu {
+            .top__menu--items {
+                .line {
+                    &:not(:nth-last-of-type(-n + 2)) {
+                        display: none;
+                    }
+                }
+            }
+            .top__menu--search {
+                input {
+                    padding: 5px 0px;
+                }
+            }
+        }
+
+        .main__menu {
+            .nav {
+                .menu {
+                    display: none !important;
+                }
+                .icon {
+                    display: block;
+                }
+            }
+            .show {
+                &:checked ~ .menu-mobile {
+                    display: block;
+                }
+            }
+        }
+    }
+}

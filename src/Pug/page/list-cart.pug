@@ -1,0 +1,68 @@
+extends ../base/base.pug 
+
+block variables 
+    - const title = "Danh Sách Đơn Hàng";
+    - const current = "/list-cart.html";
+
+    include ../component/breadcrumb 
+    include ../variables/var_breadcrumb
+    include ../variables/var_list-cart
+
+block layout 
+    include ../partials/header
+    +breadcrumb(list_cart, current)
+    .container.list-cart 
+        +title_page("Đơn Hàng")
+        .list-cart__content 
+            .row
+                .col-lg-9.list-cart__detail
+                    .list-cart__title
+                        h2 Danh Sách đơn hàng
+                        ul
+                        a(href="#") Trạng thái 
+                        each list_status in status 
+                            - const {status, count} = list_status;
+                                a(href="#").list_status= status + " (" + count + ")" 
+                    .tables
+                        table
+                            thead
+                                tr
+                                th(scope='col') STT
+                                th(scope='col') Mã hóa đơn/ngày mua hàng
+                                th(scope='col') Kho nhận hàng
+                                th(scope='col') Số sp
+                                th(scope='col') Tổng tiền
+                                th(scope='col') Tình trạng
+                                th(scope='col') Thao tác
+                            tbody
+                            each item in list_cart_item
+                                - const {id, name, date, dateTime, warehouse, count, total, status, actions} = item;
+                                tr
+                                td=id
+                                td.text-left
+                                    p=`${name} - ${date}`
+                                    p=dateTime
+                                td=warehouse
+                                td=count
+                                td=total
+                                td=status
+                                td
+                                    button.btn.btn-link=actions
+                .col-lg-3
+                    .user-info 
+                        h2 Thông tin khách hàng
+                        p 
+                            i.bi.bi-person-fill 
+                            | Giang Lê
+                            | leanhgiang89@gmail.com
+                        p 
+                            i.bi.bi-geo-alt-fill
+                            | Tòa nhà Hà Nội Group
+                            | 442 Đội Cấn, Ba Đình, Hà Nội
+                        p 
+                            i.bi.bi-telephone-fill 
+                            | (04) 3786 8904
+
+                        p 
+                            a(href="#") Chi tiết địa chỉ 
+    include ../partials/footer
