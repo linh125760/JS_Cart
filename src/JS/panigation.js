@@ -11,23 +11,24 @@ async function fetchProducts() {
     });
 }
 
-function getId(clicked_id) {
+const getId = (clicked_id) => {
   pageNumber = clicked_id;
   products = `http://localhost:3000/products?_page=${pageNumber}&_limit=${productPerPage}`;
   fetchProducts();
-}
+};
 
-function getIdCate(id) {
+const getIdCate = (id) => {
   idCate = id;
   products = `http://localhost:3000/category/${idCate}/products?_page=${pageNumber}&_limit=${productPerPage}`;
   fetchProducts();
-}
+};
 
-function getTag(id) {
+const getTag = (id) => {
   tag = id;
+  document.getElementById(tag).classList.toggle("active");
   products = `http://localhost:3000/tag/${tag}/products?_page=${pageNumber}&_limit=${productPerPage}`;
   fetchProducts();
-}
+};
 
 // Lọc theo tăng giảm
 // http://localhost:3000/tag/1/products?_sort=id&_order=desc

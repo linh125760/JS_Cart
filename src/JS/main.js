@@ -40,7 +40,7 @@ function showProducts(data) {
 
 function tagItem(tag) {
   return `        
-  <a class="tag" href="#" onclick="getTag(${tag.id})">${tag.tagName}</a>
+  <a class="tag" id="${tag.id}" onclick="getTag(${tag.id})">${tag.tagName}</a>
 `;
 }
 function productItemGridView(product) {
@@ -79,7 +79,7 @@ function productItemListView(product) {
 function categoryItem(category) {
   return `        
   <ul>
-    <li><a data-id="${category.id}" href="#" class="cate" onclick="getIdCate(${category.id})")> ${category.name}<span> (${category.quantity})</span></a></li>
+    <li><a data-id="${category.id}" class="cate" onclick="getIdCate(${category.id})")> ${category.name}<span> (${category.quantity})</span></a></li>
   </ul>
 `;
 }

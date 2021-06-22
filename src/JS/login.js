@@ -27,10 +27,9 @@ const loginUser = (e) => {
     }
   }
   if (checkloginSuccess == true) {
-    alert("bạn sẽ được chuyển hướng đến trang chủ");
     sessionStorage.setItem("user", txtEmail.value);
     var user = sessionStorage.getItem("user");
-    user ? (location.href = "/index.html") : "";
+    user ? (location.href = "/product.html") : "";
   } else {
     if (txtEmail.value == "") {
       txtEmail.nextElementSibling.textContent = "Bạn chưa nhập Email";
