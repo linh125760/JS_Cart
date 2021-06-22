@@ -1,0 +1,34 @@
+extends ../base/base.pug
+
+block variables 
+    - const title = "Thông tin giỏ hàng";
+    - const current = "/user-info.html";
+
+    include ../variables/var_breadcrumb 
+    include ../variables/var_user-info
+    include ../component/breadcrumb 
+
+block layout 
+    include ../partials/header 
+    .container#order_detail.text-center
+        
+        img(src="../assets/img/order.png", alt="order success" width="10%")
+        h3 Cảm Ơn Bạn Đã Mua Hàng Của Chúng Tôi!
+        h7 Chúng tôi xin gửi cho bạn thông tin chi tiết của đơn hàng bạn đã đặt mua tại Wine Shop 
+        .d-flex.justify-content-between.order-detail 
+            .order-left 
+                h4.p-3 Thông tin nhận hàng 
+                #info
+            .order-right 
+                h4.p-3 Thông tin đơn hàng
+                .d-flex.justify-content-between
+                    .name
+                        p Tên Sản Phẩm
+                    .quantity
+                        p Số Lượng
+                    .price
+                        p Đơn Giá
+                #here
+    include ../partials/footer
+block script 
+    script(src="JS/order_detail.js")

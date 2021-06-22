@@ -262,3 +262,13 @@ header {
         }
     }
 }
+.addSuccess, .deleteSuccess, .checkOutSuccess {
+    display: block;
+    padding: 15px 50px 15px 15px;
+    margin: 0;
+    position: fixed;
+    color: white;
+    top: 50px;
+    right: -500px;
+    background-color: $yellow;
+}
