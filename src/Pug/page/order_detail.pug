@@ -2,7 +2,7 @@ extends ../base/base.pug
 
 block variables 
     - const title = "Thông tin giỏ hàng";
-    - const current = "/user-info.html";
+    - const current = "/order_detail.html";
 
     include ../variables/var_breadcrumb 
     include ../variables/var_user-info
@@ -11,8 +11,8 @@ block variables
 block layout 
     include ../partials/header 
     .container#order_detail.text-center
-        
-        img(src="../assets/img/order.png", alt="order success" width="10%")
+
+        img(src="../assets/img/order.png" alt="order success" width="10%")
         h3 Cảm Ơn Bạn Đã Mua Hàng Của Chúng Tôi!
         h7 Chúng tôi xin gửi cho bạn thông tin chi tiết của đơn hàng bạn đã đặt mua tại Wine Shop 
         .d-flex.justify-content-between.order-detail 

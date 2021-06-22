@@ -5,22 +5,30 @@ const zip = document.getElementById("zip");
 const input = document.querySelectorAll("input");
 const phone = document.getElementById("phone");
 
-var form = document.querySelector("#address");
+const form = document.querySelector("#address");
 var today = new Date();
-var date = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + " / " + today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+var date = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + " / " + today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
 const checkOut = (e) => {
   e.preventDefault();
   if (
     fname.value &&
     home.value &&
     city.value &&
-    zip.value &&  
+    zip.value &&
     phone.value !== false
   ) {
     let storage = JSON.parse(localStorage.getItem("cart")) || [];
     localStorage.setItem("detail", JSON.stringify(storage));
-    var info = [{name: fname.value, address: home.value, city: city.value, phone: phone.value, date: date}]
-    localStorage.setItem("info", JSON.stringify(info))
+    var info = [
+      {
+        name: fname.value,
+        address: home.value,
+        city: city.value,
+        phone: phone.value,
+        date: date,
+      },
+    ];
+    localStorage.setItem("info", JSON.stringify(info));
     localStorage.removeItem("cart");
     window.location.href = "order_detail.html";
   } else {

@@ -8,7 +8,6 @@ const addToCart = async (id) => {
   const product = await res.json();
 
   const indexCart = storage.findIndex((cart) => cart.id === id);
-
   if (indexCart > -1) {
     storage[indexCart] = {
       ...storage[indexCart],
@@ -18,8 +17,8 @@ const addToCart = async (id) => {
     storage.push({ ...product, quantity: 1 });
   }
 
-  showAlertAdd()
-
+  showAlertAdd();
+  
   localStorage.setItem("cart", JSON.stringify(storage));
 };
 
@@ -90,7 +89,7 @@ const remove = (id) => {
 
   if (confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng ???")) {
     storage = storage.filter((item) => item.id != id);
-    showAlertDelete()
+    showAlertDelete();
   }
 
   localStorage.setItem("cart", JSON.stringify(storage));
@@ -123,4 +122,4 @@ const showAlertDelete = () => {
   setTimeout(() => {
     a.style.right = "-500px";
   }, 1500);
-}
+};
